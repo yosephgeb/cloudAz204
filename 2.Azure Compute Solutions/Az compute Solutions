@@ -1,0 +1,21 @@
+Shared Responsibility Model -: it is Responsibility you share with azure as you choose different form of the service.
+-  On-premises -: you are responsible for everything.
+-  IAAS(infrustructure as a service) -: Azure is responsible for the hardware.
+-  PaaS -: Azure is responsible for the hardware, host infrustructure and network control. There is a shared responsibility for Application level control & identity access management. you are responsible for the client endpoints protection and data classification and accountability
+
+- Saas -: Azure is responsible for almost everything except partly for the client and endpoint protection with is shared. you are responsible for data classifiation and accountability. Example Microsoft 365
+
+Deployment Options
+
+imperative code -: you describe each steps on what you want like step by step. Example Azure CLI, powershell
+declarative code -: you describe the end result that you want. Example ARM(json format), Bicep(YAML format), Terraform, Ansible
+
+Virtual machines
+- They come in different size for different purpose like small test optimized, something in between, GPU bearing for machine learning
+- customizable from Os to Images like windows or linux, pupose built images, you own images ...
+
+--- az vm create --resoure-group vm-test-group --name my-vm --image UbuntuLTS --generate-ssh-keys --admin-username azureuser / --public-ip-sku Standard
+
+-- az vm is a command group where you can pull a command from
+-- create is the command that is pulled from the command group az vm
+-- the resoure-group vm-test-group should be created in advance before using it as a resource group for my-vm
